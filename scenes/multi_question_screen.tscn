@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bb0417bjqbder"]
+[gd_scene load_steps=7 format=3 uid="uid://bb0417bjqbder"]
 
 [ext_resource type="Script" path="res://scenes/multi_question_screen.gd" id="1_5wwdr"]
 [ext_resource type="Texture2D" uid="uid://b045kf2rp4vw7" path="res://backgrounds/russia.jpg" id="2_fohfu"]
@@ -19,6 +19,8 @@ expand_margin_left = 10.0
 expand_margin_top = 10.0
 expand_margin_right = 10.0
 expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1elop"]
 
 [node name="MultiQuestionScreen" type="Node"]
 script = ExtResource("1_5wwdr")
@@ -70,12 +72,22 @@ theme_override_constants/separation = 22
 layout_mode = 2
 theme_override_constants/separation = 22
 
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_2y1vl")
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1elop")
+
 [node name="AnswerButton" type="Button" parent="CanvasLayer/PanelContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("3_2y1vl")
 text = "Ответить"
+
+[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_2y1vl")
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1elop")
 
 [node name="FalseCorrectPopup" parent="CanvasLayer" instance=ExtResource("3_neh3p")]
 
