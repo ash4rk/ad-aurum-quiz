@@ -40,6 +40,6 @@ offset_right = 46.5
 offset_bottom = 218.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "New Game"
+text = "Новая игра"
 
 [connection signal="pressed" from="NewGameButton" to="." method="_on_new_game_button_pressed"]
