@@ -34,6 +34,7 @@ func reset_game():
 	_questions.shuffle()
 
 func _filter_by_answers_number(question: Dictionary) -> Dictionary:
+	@warning_ignore("unassigned_variable")
 	var result_question: Dictionary
 	# Pop first correct answer from question.answers
 	var first_correct_answer = question.answers.pop_at(_get_first_correct_idx(question.answers))
@@ -57,6 +58,7 @@ func _get_first_correct_idx(answers: Array) -> int:
 	for i in range(answers.size()):
 		if answers[i].correct:
 			return i
+	@warning_ignore("assert_always_false")
 	assert(false, "ERROR: Question does not have a single correct answer.")
 	return 0
 

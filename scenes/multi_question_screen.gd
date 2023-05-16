@@ -16,7 +16,7 @@ func _ready():
 	question_label.text = question.question
 	_init_answer_checkboxes(question.answers)
 
-func _process(delta):
+func _process(_delta):
 	next_button.disabled = SceneManager.is_transitioning
 
 func _init_answer_checkboxes(answers: Array) -> void:

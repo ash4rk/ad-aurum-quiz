@@ -8,7 +8,7 @@ const QUESTION_SCREEN_PATH = "res://scenes/question_screen.tscn"
 func _ready():
 	await SceneManager.scene_loaded
 
-func _process(delta):
+func _process(_delta):
 	play_button.disabled = SceneManager.is_transitioning
 
 func _on_play_button_pressed():
