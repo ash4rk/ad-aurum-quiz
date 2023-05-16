@@ -20,14 +20,91 @@
 	"background": "backgrounds/osmium.jpg"
   },  
   {
-	"question": "Вопрос с тремя правильными ответами",
+	"question": "Что является спутником Марса?",
 	"answers": [
-	  {"text": "Правильный ответ 1", "correct": true},
-	  {"text": "Правильный ответ 2", "correct": true},
-	  {"text": "Правильный ответ 3", "correct": true},
-	  {"text": "Неправильный ответ 2", "correct": false},
-	  {"text": "Неправильный ответ 3", "correct": false}
+	  {"text": "Фобос", "correct": true},
+	  {"text": "Деймос", "correct": true},
+	  {"text": "Ио", "correct": false},
+	  {"text": "Европа", "correct": false},
+	  {"text": "Каллисто", "correct": false}
 	],
-	"background": "backgrounds/icon.svg"
+	"background": "backgrounds/mars.jpg"
+  },
+  {
+	"question": "Назовите самую продаваемую книжную серию 21 века?",
+	"answers": [
+	  {"text": "Гарри Поттер", "correct": true},
+	  {"text": "Властелин Колец", "correct": false},
+	  {"text": "Облачный атлас", "correct": false},
+	  {"text": "Аустерлиц", "correct": false},
+	  {"text": "Песнь льда и огня", "correct": false}
+	],
+	"background": "backgrounds/harry_potter.jpg"
+  },
+  {
+	"question": "Назовите автора манги One Piece?",
+	"answers": [
+	  {"text": "Эйитиро Ода", "correct": true},
+	  {"text": "Ёсихиро Тогаси", "correct": false},
+	  {"text": "Такэси Обата", "correct": false},
+	  {"text": "Хирохико Араки", "correct": false},
+	  {"text": "Хаяо Миядзаки", "correct": false}
+	],
+	"background": "backgrounds/one_piece.jpg"
+  },
+  {
+	"question": "Что из нижеперечисленного относится к жанру RTS?",
+	"answers": [
+	  {"text": "Starcraft", "correct": true},
+	  {"text": "Warcraft", "correct": true},
+	  {"text": "Portal", "correct": false},
+	  {"text": "Minecraft", "correct": false},
+	  {"text": "The Elder Scrolls IV: Oblivion", "correct": false}
+	],
+	"background": "backgrounds/warcraft.jpg"
+  },
+  {
+	"question": "Какой известный художник был скульптором, архитектором и инженером?",
+	"answers": [
+	  {"text": "Леонардо да Винчи", "correct": true},
+	  {"text": "Микеланджело", "correct": false},
+	  {"text": "Рафаэль Санти", "correct": false},
+	  {"text": "Донателло", "correct": false},
+	  {"text": "Филиппо Брунеллески", "correct": false}
+	],
+	"background": "backgrounds/leonardo_da_vinci.jpg"
+  },
+  {
+	"question": "Из какого вечнозеленого дерева делают пианино и скрипки?",
+	"answers": [
+	  {"text": "Ель", "correct": true},
+	  {"text": "Дуб", "correct": false},
+	  {"text": "Пальма", "correct": false},
+	  {"text": "Ясень", "correct": false},
+	  {"text": "Берёза", "correct": false}
+	],
+	"background": "backgrounds/el.jpg"
+  },
+  {
+	"question": "В каком вымышленном городе живет Губка Боб Квадратные Штаны?",
+	"answers": [
+	  {"text": "Бикини Боттом", "correct": true},
+	  {"text": "Спрингфилд", "correct": false},
+	  {"text": "Неверленд", "correct": false},
+	  {"text": "Изумрудный город", "correct": false},
+	  {"text": "Сайлент Хилл", "correct": false}
+	],
+	"background": "backgrounds/bikini_bottom.jpg"
+  },
+  {
+	"question": "Кто единственный музыкант, когда-либо удостоенный Нобелевской премии по литературе?",
+	"answers": [
+	  {"text": "Боб Дилан", "correct": true},
+	  {"text": "Боб Марли", "correct": false},
+	  {"text": "Пальма", "correct": false},
+	  {"text": "Майкл Джексон", "correct": false},
+	  {"text": "Мадонна", "correct": false}
+	],
+	"background": "backgrounds/bob_dylan.jpg"
   },
 ]
