@@ -9,11 +9,15 @@ var question: Dictionary
 @onready var answer_checkboxes_container = $CanvasLayer/PanelContainer2/VBoxContainer/AnswerButtonsContainer
 @onready var popup = $CanvasLayer/FalseCorrectPopup
 @onready var popup_label = $CanvasLayer/FalseCorrectPopup/PanelContainer/VBoxContainer/FalseCorrectLabel
+@onready var next_button = $CanvasLayer/FalseCorrectPopup/PanelContainer/VBoxContainer/NextQuestionButton
 
 func _ready():
 	bg.texture = load("res://" + question.background)
 	question_label.text = question.question
 	_init_answer_checkboxes(question.answers)
+
+func _process(delta):
+	next_button.disabled = SceneManager.is_transitioning
 
 func _init_answer_checkboxes(answers: Array) -> void:
 	for answer in answers:
