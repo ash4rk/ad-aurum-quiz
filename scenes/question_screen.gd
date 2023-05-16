@@ -30,6 +30,7 @@ func _init_answer_buttons(answers: Array) -> void:
 func _check_correctness(is_correct: bool) -> void:
 	if is_correct:
 		popup_label.text = "Correct answer!"
+		Global.correct_answers += 1
 	else:
 		popup_label.text = "Wrong answer!"
 	popup.visible = true
