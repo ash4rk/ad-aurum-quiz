@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bb8ysn4t6y6or"]
+[gd_scene load_steps=2 format=3 uid="uid://bsp5t8m560nsr"]
 
-[ext_resource type="Script" path="res://scenes/main_menu_screen.gd" id="1_6k5qg"]
+[ext_resource type="Script" path="res://main.gd" id="1_862q7"]
 
 [node name="MainMenuScreen" type="Node"]
-script = ExtResource("1_6k5qg")
+script = ExtResource("1_862q7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

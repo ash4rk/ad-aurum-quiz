@@ -1,6 +1,6 @@
 extends Node
 
-const MAIN_MENU_SCREEN_PATH = "res://scenes/main_menu_screen.tscn"
+const MAIN_MENU_SCREEN_PATH = "res://main.tscn"
 
 var correct_answers: int
 var number_of_questions: int
