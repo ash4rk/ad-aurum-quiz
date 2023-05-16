@@ -12,6 +12,7 @@ var answers_number_display: int = 4
 
 func _ready():
 	_questions = _parse_questions()
+	_questions.shuffle()
 
 func load_next_screen():
 	_question_idx += 1
@@ -30,6 +31,7 @@ func reset_game():
 	_question_idx = -1
 	correct_answers = 0
 	_questions = _parse_questions()
+	_questions.shuffle()
 
 func _filter_by_answers_number(question: Dictionary) -> Dictionary:
 	var result_question: Dictionary
@@ -43,6 +45,7 @@ func _filter_by_answers_number(question: Dictionary) -> Dictionary:
 	# Add other fields to question
 	result_question.question = question.question
 	result_question.background = question.background
+	result_question.answers.shuffle()
 	return result_question
 
 func _parse_questions() -> Array:
