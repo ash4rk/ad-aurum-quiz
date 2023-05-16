@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://6ceu4e4sceig"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://6ceu4e4sceig"]
 
-[ext_resource type="FontFile" uid="uid://dun551udhbsrh" path="res://assets/fonts/ComicNeue-Regular.ttf" id="1_86voy"]
+[ext_resource type="FontFile" uid="uid://b0d7wbfx8ntg5" path="res://assets/fonts/OpenSans-Bold.ttf" id="1_hirtd"]
+[ext_resource type="FontFile" uid="uid://cx1keuq3tdpwa" path="res://assets/fonts/OpenSans-Regular.ttf" id="2_lme3u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rn7pw"]
 bg_color = Color(0.423529, 0.513726, 0.568627, 1)
@@ -97,10 +98,11 @@ expand_margin_right = 12.0
 expand_margin_bottom = 12.0
 
 [resource]
-default_font = ExtResource("1_86voy")
+default_font = ExtResource("2_lme3u")
 default_font_size = 32
 Button/colors/font_color = Color(0.886275, 0.886275, 0.886275, 1)
 Button/constants/h_separation = 8
+Button/fonts/font = ExtResource("1_hirtd")
 Button/styles/disabled = SubResource("StyleBoxFlat_rn7pw")
 Button/styles/focus = SubResource("StyleBoxEmpty_wpaab")
 Button/styles/hover = SubResource("StyleBoxFlat_q6uiu")

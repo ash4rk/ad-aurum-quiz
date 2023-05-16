@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://main.gd" id="1_862q7"]
 [ext_resource type="Theme" uid="uid://6ceu4e4sceig" path="res://assets/main_theme.tres" id="2_l54my"]
-[ext_resource type="FontFile" uid="uid://dl7t0uwwqijb7" path="res://assets/fonts/ComicNeue-Bold.ttf" id="3_slfr2"]
+[ext_resource type="FontFile" uid="uid://b0d7wbfx8ntg5" path="res://assets/fonts/OpenSans-Bold.ttf" id="4_2xerh"]
 
 [node name="MainMenuScreen" type="Node"]
 script = ExtResource("1_862q7")
@@ -30,7 +30,6 @@ offset_bottom = 49.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_l54my")
-theme_override_fonts/font = ExtResource("3_slfr2")
 theme_override_font_sizes/font_size = 78
 text = "Начать игру"
 
@@ -53,7 +52,7 @@ text = "Количество ответов для вывода:  "
 [node name="AnswersNumberOption" type="OptionButton" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_l54my")
-theme_override_fonts/font = ExtResource("3_slfr2")
+theme_override_fonts/font = ExtResource("4_2xerh")
 item_count = 4
 selected = 2
 popup/item_0/text = "2"

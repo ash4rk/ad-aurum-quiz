@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cfiq61x4je7ht"]
+[gd_scene load_steps=12 format=3 uid="uid://cfiq61x4je7ht"]
 
 [ext_resource type="Theme" uid="uid://6ceu4e4sceig" path="res://assets/main_theme.tres" id="1_plotu"]
 [ext_resource type="Script" path="res://scenes/answer_button.gd" id="1_uxrb0"]
+[ext_resource type="FontFile" uid="uid://b0d7wbfx8ntg5" path="res://assets/fonts/OpenSans-Bold.ttf" id="2_wxars"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkfxv"]
 content_margin_left = 128.0
@@ -106,7 +107,10 @@ _data = {
 modulate = Color(0.802238, 0.887547, 0.858852, 1)
 focus_mode = 0
 theme = ExtResource("1_plotu")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/h_separation = 22
+theme_override_fonts/font = ExtResource("2_wxars")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_qkfxv")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pqnk8")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_mtp30")

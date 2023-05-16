@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://ccom7kjlxhav3"]
 
+[ext_resource type="Theme" uid="uid://6ceu4e4sceig" path="res://assets/main_theme.tres" id="1_h8ggx"]
 [ext_resource type="Script" path="res://scenes/answer_button.gd" id="1_inxjq"]
-[ext_resource type="FontFile" uid="uid://dl7t0uwwqijb7" path="res://assets/fonts/ComicNeue-Bold.ttf" id="1_rlta1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jgxec"]
 content_margin_left = 128.0
@@ -81,8 +81,8 @@ _data = {
 }
 
 [node name="AnswerButton" type="Button"]
+theme = ExtResource("1_h8ggx")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_rlta1")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_jgxec")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yfcgc")
