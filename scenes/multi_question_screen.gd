@@ -1,5 +1,6 @@
 extends Node
 
+signal check_correctness
 const ANSWER_CHECKBOX_SCENE = preload("res://scenes/answer_checkbox.tscn")
 
 var question: Dictionary
@@ -24,8 +25,10 @@ func _init_answer_checkboxes(answers: Array) -> void:
 		check.answer_text = answer.text
 		check.is_correct = answer.correct
 		answer_checkboxes_container.add_child(check)
+		check_correctness.connect(check.check_button)
 
 func _check_correctness() -> void:
+	check_correctness.emit()
 	for check in answer_checkboxes_container.get_children():
 		if (not check.is_correct and check.button_pressed) or (check.is_correct and not check.button_pressed):
 			popup.show_wrong()

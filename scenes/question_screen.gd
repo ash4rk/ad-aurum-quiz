@@ -1,5 +1,6 @@
 extends Node
 
+signal check_correctness
 const ANSWER_BUTTON_SCENE = preload("res://scenes/answer_button.tscn")
 
 var question: Dictionary
@@ -21,8 +22,10 @@ func _init_answer_buttons(answers: Array) -> void:
 		button.is_correct = answer.correct
 		answer_buttons_container.add_child(button)
 		button.pressed.connect(_check_correctness.bind(button.is_correct))
+		check_correctness.connect(button.check_button)
 
 func _check_correctness(is_correct: bool) -> void:
+	check_correctness.emit()
 	if is_correct:
 		Global.correct_answers += 1
 		popup.show_correct()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfiq61x4je7ht"]
+[gd_scene load_steps=11 format=3 uid="uid://cfiq61x4je7ht"]
 
 [ext_resource type="Theme" uid="uid://6ceu4e4sceig" path="res://assets/main_theme.tres" id="1_plotu"]
 [ext_resource type="Script" path="res://scenes/answer_button.gd" id="1_uxrb0"]
@@ -64,7 +64,46 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="Animation" id="Animation_s77vd"]
+resource_name = "green_blinking"
+length = 2.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.6, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.802238, 0.887547, 0.858852, 1), Color(0, 0.431373, 0.286275, 1), Color(1, 1, 1, 1), Color(0, 0.431373, 0.286275, 1), Color(1, 1, 1, 1), Color(0, 0.431373, 0.286275, 1), Color(0.802238, 0.887547, 0.858852, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j60aj"]
+resource_name = "DEFAULT"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5dyr8"]
+_data = {
+"DEFAULT": SubResource("Animation_j60aj"),
+"green_blinking": SubResource("Animation_s77vd")
+}
+
 [node name="AnswerCheckbox" type="CheckBox"]
+modulate = Color(0.802238, 0.887547, 0.858852, 1)
 focus_mode = 0
 theme = ExtResource("1_plotu")
 theme_override_constants/h_separation = 22
@@ -76,3 +115,9 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_50wvm")
 theme_override_styles/focus = SubResource("StyleBoxFlat_pqnk8")
 text = "Answer text"
 script = ExtResource("1_uxrb0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "DEFAULT"
+libraries = {
+"": SubResource("AnimationLibrary_5dyr8")
+}

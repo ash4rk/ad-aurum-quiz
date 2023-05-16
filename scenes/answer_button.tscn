@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccom7kjlxhav3"]
+[gd_scene load_steps=9 format=3 uid="uid://ccom7kjlxhav3"]
 
 [ext_resource type="Script" path="res://scenes/answer_button.gd" id="1_inxjq"]
 [ext_resource type="FontFile" uid="uid://dl7t0uwwqijb7" path="res://assets/fonts/ComicNeue-Bold.ttf" id="1_rlta1"]
@@ -42,6 +42,44 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="Animation" id="Animation_s77vd"]
+resource_name = "green_blinking"
+length = 2.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.6, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.802238, 0.887547, 0.858852, 1), Color(0, 0.431373, 0.286275, 1), Color(1, 1, 1, 1), Color(0, 0.431373, 0.286275, 1), Color(1, 1, 1, 1), Color(0, 0.431373, 0.286275, 1), Color(0.802238, 0.887547, 0.858852, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j60aj"]
+resource_name = "DEFAULT"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5dyr8"]
+_data = {
+"DEFAULT": SubResource("Animation_j60aj"),
+"green_blinking": SubResource("Animation_s77vd")
+}
+
 [node name="AnswerButton" type="Button"]
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_rlta1")
@@ -53,3 +91,9 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_jgxec")
 theme_override_styles/focus = SubResource("StyleBoxFlat_jgxec")
 text = "Answer text"
 script = ExtResource("1_inxjq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "DEFAULT"
+libraries = {
+"": SubResource("AnimationLibrary_5dyr8")
+}
