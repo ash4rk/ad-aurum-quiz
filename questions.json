@@ -101,7 +101,6 @@
 	"answers": [
 	  {"text": "Боб Дилан", "correct": true},
 	  {"text": "Боб Марли", "correct": false},
-	  {"text": "Пальма", "correct": false},
 	  {"text": "Майкл Джексон", "correct": false},
 	  {"text": "Мадонна", "correct": false}
 	],
