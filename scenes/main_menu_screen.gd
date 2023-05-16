@@ -6,4 +6,4 @@ func _ready():
 	await SceneManager.scene_loaded
 
 func _on_play_button_pressed():
-	Global.load_next_question()
+	Global.load_next_screen()

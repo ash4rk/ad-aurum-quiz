@@ -36,4 +36,4 @@ func _check_correctness(is_correct: bool) -> void:
 	popup.visible = true
 
 func _on_next_question_button_pressed():
-	Global.load_next_question()
+	Global.load_next_screen()
