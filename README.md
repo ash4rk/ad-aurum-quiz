@@ -2,7 +2,7 @@
 <img src="icon.svg" align="left" width=128 height=128> This repository contains a quiz game developed using [Godot](https://github.com/godotengine/godot). The game features a simple quiz loop where players can answer questions and view the correct answers. 
 Incorrect choices are highlighted in red. After completing all the questions, players can view basic statistics of their answers. Additionally, users have the option to set the maximum number of answers to be displayed. 
 
-![godot_button_icon_151956 (copy)](https://github.com/ash4rk/ad-aurum-quiz/assets/30512240/cc35c4e9-d603-431f-99f8-d8398736689c)
+<img src="https://github.com/ash4rk/ad-aurum-quiz/assets/30512240/4083e8c8-4386-4229-b13e-3a75d127e34e" height="40"/>
 
 ## Features
 
@@ -47,3 +47,7 @@ All this time recording a screencast. Still found design flaws and minor bugs fo
 <h1 align="center">
 <img src="https://github.com/ash4rk/ad-aurum-quiz/assets/30512240/5fc1a526-7f97-48a6-adb6-1690ab2544f9" height="500"/></h1>
 <p align="center">
+
+## Addons
+
+Used the [Godot Scene Manager](https://github.com/glass-brick/Scene-Manager) addon for cool fancy transitions between screenshots
