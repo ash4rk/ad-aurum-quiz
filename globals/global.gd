@@ -27,7 +27,7 @@ func load_next_screen():
 		_load_next_question(next_question)
 
 func reset_game():
-	_question_idx = 0
+	_question_idx = -1
 	correct_answers = 0
 
 func _pass_end_game_params(scene): 
