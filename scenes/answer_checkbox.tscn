@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfiq61x4je7ht"]
+
+[ext_resource type="Script" path="res://scenes/answer_button.gd" id="1_uxrb0"]
+
+[node name="AnswerCheckbox" type="CheckBox"]
+text = "Answer text"
+script = ExtResource("1_uxrb0")

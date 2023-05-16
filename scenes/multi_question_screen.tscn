@@ -1,0 +1,98 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb0417bjqbder"]
+
+[ext_resource type="Script" path="res://scenes/multi_question_screen.gd" id="1_5wwdr"]
+[ext_resource type="Texture2D" uid="uid://b045kf2rp4vw7" path="res://backgrounds/russia.jpg" id="2_fohfu"]
+
+[node name="MultiQuestionScreen" type="Node"]
+script = ExtResource("1_5wwdr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BG" type="TextureRect" parent="CanvasLayer"]
+offset_left = -544.0
+offset_top = 1.0
+offset_right = 1309.0
+offset_bottom = 1286.0
+texture = ExtResource("2_fohfu")
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -83.0
+offset_top = 36.0
+offset_right = 83.0
+offset_bottom = 76.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="QuestionLabel" type="Label" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Question text here..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = 156.0
+offset_right = 40.0
+offset_bottom = 257.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer2"]
+layout_mode = 2
+
+[node name="AnswerButtonsContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="AnswerButton" type="Button" parent="CanvasLayer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Ответить"
+
+[node name="FalseCorrectPopup" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/FalseCorrectPopup"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/FalseCorrectPopup/PanelContainer"]
+layout_mode = 2
+
+[node name="FalseCorrectLabel" type="Label" parent="CanvasLayer/FalseCorrectPopup/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "False/Correct answer"
+horizontal_alignment = 1
+
+[node name="NextQuestionButton" type="Button" parent="CanvasLayer/FalseCorrectPopup/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Next question"
+
+[connection signal="pressed" from="CanvasLayer/PanelContainer2/VBoxContainer/AnswerButton" to="." method="_check_correctness"]
+[connection signal="pressed" from="CanvasLayer/FalseCorrectPopup/PanelContainer/VBoxContainer/NextQuestionButton" to="." method="_on_next_question_button_pressed"]

@@ -18,5 +18,16 @@
 	  {"text": "Осмий", "correct": true}
 	],
 	"background": "backgrounds/osmium.jpg"
+  },  
+  {
+	"question": "Вопрос с тремя правильными ответами",
+	"answers": [
+	  {"text": "Правильный ответ 1", "correct": true},
+	  {"text": "Правильный ответ 2", "correct": true},
+	  {"text": "Правильный ответ 3", "correct": true},
+	  {"text": "Неправильный ответ 2", "correct": false},
+	  {"text": "Неправильный ответ 3", "correct": false}
+	],
+	"background": "backgrounds/icon.svg"
   },
 ]

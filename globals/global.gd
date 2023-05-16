@@ -1,6 +1,7 @@
 extends Node
 
 const QUESTION_SCREEN_PATH = "res://scenes/question_screen.tscn"
+const MULTI_QUESTION_SCREEN_PATH = "res://scenes/multi_question_screen.tscn"
 const END_GAME_SCREEN_PATH = "res://scenes/end_game_screen.tscn"
 const QUESTIONS_JSON_PATH = "res://questions.json"
 
@@ -14,12 +15,16 @@ func _ready():
 
 func load_next_screen():
 	_question_idx += 1
-	
 	if _question_idx >= _questions.size():
 		_load_eng_game_screen()
 		return
+		
+	var next_question: Dictionary = _questions[_question_idx]
 	
-	_load_next_question()
+	if _count_correct_answers(next_question.answers) > 1:
+		_load_next_multi_question(next_question)
+	else:
+		_load_next_question(next_question)
 
 func reset_game():
 	_question_idx = 0
@@ -28,6 +33,13 @@ func reset_game():
 func _pass_end_game_params(scene): 
 	scene.correct_answers = correct_answers
 	scene.number_of_questions = _questions.size()
+
+func _count_correct_answers(answers: Array) -> int:
+	var result: int = 0
+	for i in answers:
+		if i.correct:
+			result += 1
+	return result
 
 func _load_eng_game_screen():
 	if not SceneManager.is_transitioning:
@@ -39,12 +51,22 @@ func _load_eng_game_screen():
 			}
 		)
 
-func _load_next_question():
+func _load_next_question(question: Dictionary):
 	if not SceneManager.is_transitioning:
 		SceneManager.change_scene(
 			QUESTION_SCREEN_PATH, {
 				"pattern_enter": "fade",
 				"pattern_leave": "squares",
-				"on_tree_enter": func(scene): scene.question = _questions[_question_idx]
+				"on_tree_enter": func(scene): scene.question = question
+			}
+		)
+
+func _load_next_multi_question(question: Dictionary):
+	if not SceneManager.is_transitioning:
+		SceneManager.change_scene(
+			MULTI_QUESTION_SCREEN_PATH, {
+				"pattern_enter": "fade",
+				"pattern_leave": "squares",
+				"on_tree_enter": func(scene): scene.question = question
 			}
 		)
