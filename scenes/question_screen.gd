@@ -4,10 +4,6 @@ const ANSWER_BUTTON_SCENE = preload("res://scenes/answer_button.tscn")
 
 var question: Dictionary
 
-#question.question - question text
-#question.background - image path (like "backgrounds/osmium.jpg")
-#question.answers - array of answers
-
 @onready var question_label = $CanvasLayer/PanelContainer/QuestionLabel
 @onready var bg = $CanvasLayer/BG
 @onready var answer_buttons_container = $CanvasLayer/PanelContainer2/AnswerButtonsContainer
@@ -20,10 +16,10 @@ func _ready():
 	_init_answer_buttons(question.answers)
 
 func _init_answer_buttons(answers: Array) -> void:
-	for i in answers:
+	for answer in answers:
 		var button: AnswerButton = ANSWER_BUTTON_SCENE.instantiate()
-		button.answer_text = i.text
-		button.is_correct = i.correct
+		button.answer_text = answer.text
+		button.is_correct = answer.correct
 		answer_buttons_container.add_child(button)
 		button.pressed.connect(_check_correctness.bind(button.is_correct))
 
