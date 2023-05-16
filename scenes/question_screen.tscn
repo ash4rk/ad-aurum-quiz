@@ -26,10 +26,8 @@ script = ExtResource("1_5g8i4")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="BG" type="TextureRect" parent="CanvasLayer"]
-offset_left = -544.0
-offset_top = 1.0
-offset_right = 1309.0
-offset_bottom = 1286.0
+offset_right = 720.0
+offset_bottom = 1280.0
 texture = ExtResource("2_eemx3")
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
