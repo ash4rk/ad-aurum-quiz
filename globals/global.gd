@@ -40,7 +40,8 @@ func _filter_by_answers_number(question: Dictionary) -> Dictionary:
 	# Add one correct answer
 	result_question.answers = [first_correct_answer]
 	# Fill another answers
-	for i in range(answers_number_display-1):
+	var n_answers_to_fill: int = min(answers_number_display-1, question.answers.size())
+	for i in range(n_answers_to_fill):
 		result_question.answers.push_back(question.answers[i])
 	# Add other fields to question
 	result_question.question = question.question
