@@ -49,7 +49,7 @@ func _get_first_correct_idx(answers: Array) -> int:
 	for i in range(answers.size()):
 		if answers[i].correct:
 			return i
-	assert(false, "ERROR: Question does not have a single correct answer.");
+	assert(false, "ERROR: Question does not have a single correct answer.")
 	return 0
 
 
