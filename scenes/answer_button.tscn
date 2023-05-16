@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccom7kjlxhav3"]
+
+[ext_resource type="Script" path="res://scenes/answer_button.gd" id="1_inxjq"]
+
+[node name="AnswerButton" type="Button"]
+script = ExtResource("1_inxjq")

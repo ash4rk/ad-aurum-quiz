@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxr45g1bffb5w"]
+[gd_scene load_steps=3 format=3 uid="uid://b3r1gypxbkoxr"]
 
 [ext_resource type="Script" path="res://scenes/question_screen.gd" id="1_5g8i4"]
-[ext_resource type="Texture2D" uid="uid://b045kf2rp4vw7" path="res://background/russia.jpg" id="1_8r070"]
+[ext_resource type="Texture2D" uid="uid://b045kf2rp4vw7" path="res://backgrounds/russia.jpg" id="2_eemx3"]
 
 [node name="QuestionScreen" type="Node"]
 script = ExtResource("1_5g8i4")
@@ -13,7 +13,7 @@ offset_left = -544.0
 offset_top = 1.0
 offset_right = 1309.0
 offset_bottom = 1286.0
-texture = ExtResource("1_8r070")
+texture = ExtResource("2_eemx3")
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
 anchors_preset = 5
@@ -51,19 +51,3 @@ size_flags_vertical = 4
 
 [node name="AnswerButtonsContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer2"]
 layout_mode = 2
-
-[node name="Button" type="Button" parent="CanvasLayer/PanelContainer2/AnswerButtonsContainer"]
-layout_mode = 2
-text = "Answer 1"
-
-[node name="Button2" type="Button" parent="CanvasLayer/PanelContainer2/AnswerButtonsContainer"]
-layout_mode = 2
-text = "Answer 2"
-
-[node name="Button3" type="Button" parent="CanvasLayer/PanelContainer2/AnswerButtonsContainer"]
-layout_mode = 2
-text = "Answer 3"
-
-[node name="Button4" type="Button" parent="CanvasLayer/PanelContainer2/AnswerButtonsContainer"]
-layout_mode = 2
-text = "Answer 4"
