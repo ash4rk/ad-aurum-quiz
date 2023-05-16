@@ -11,8 +11,7 @@ var correct_answers: = 0
 var answers_number_display: int = 4
 
 func _ready():
-	var json_string = FileAccess.get_file_as_string(QUESTIONS_JSON_PATH)
-	_questions = JSON.parse_string(json_string)
+	_questions = _parse_questions()
 
 func load_next_screen():
 	_question_idx += 1
@@ -30,6 +29,7 @@ func load_next_screen():
 func reset_game():
 	_question_idx = -1
 	correct_answers = 0
+	_questions = _parse_questions()
 
 func _filter_by_answers_number(question: Dictionary) -> Dictionary:
 	var result_question: Dictionary
@@ -44,6 +44,10 @@ func _filter_by_answers_number(question: Dictionary) -> Dictionary:
 	result_question.question = question.question
 	result_question.background = question.background
 	return result_question
+
+func _parse_questions() -> Array:
+	var json_string = FileAccess.get_file_as_string(QUESTIONS_JSON_PATH)
+	return JSON.parse_string(json_string)
 
 func _get_first_correct_idx(answers: Array) -> int:
 	for i in range(answers.size()):
