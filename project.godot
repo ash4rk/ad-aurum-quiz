@@ -15,7 +15,15 @@ run/main_scene="res://scenes/question_screen.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SceneManager="*res://addons/scene_manager/SceneManager.tscn"
+
 [display]
 
 window/size/viewport_width=720
 window/size/viewport_height=1280
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/scene_manager/plugin.cfg")
