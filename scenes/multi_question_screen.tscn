@@ -92,7 +92,7 @@ horizontal_alignment = 1
 
 [node name="NextQuestionButton" type="Button" parent="CanvasLayer/FalseCorrectPopup/PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Next question"
+text = "Далее"
 
 [connection signal="pressed" from="CanvasLayer/PanelContainer2/VBoxContainer/AnswerButton" to="." method="_check_correctness"]
 [connection signal="pressed" from="CanvasLayer/FalseCorrectPopup/PanelContainer/VBoxContainer/NextQuestionButton" to="." method="_on_next_question_button_pressed"]

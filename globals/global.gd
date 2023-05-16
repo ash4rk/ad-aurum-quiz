@@ -52,7 +52,6 @@ func _get_first_correct_idx(answers: Array) -> int:
 	assert(false, "ERROR: Question does not have a single correct answer.")
 	return 0
 
-
 func _pass_end_game_params(scene): 
 	scene.correct_answers = correct_answers
 	scene.number_of_questions = _questions.size()
