@@ -7,8 +7,7 @@ var question: Dictionary
 @onready var question_label = $CanvasLayer/PanelContainer/QuestionLabel
 @onready var bg = $CanvasLayer/BG
 @onready var answer_buttons_container = $CanvasLayer/PanelContainer2/AnswerButtonsContainer
-@onready var popup = $CanvasLayer/FalseCorrectPopup
-@onready var popup_label = $CanvasLayer/FalseCorrectPopup/PanelContainer/VBoxContainer/FalseCorrectLabel
+@onready var popup: FalseCorrectPopup = $CanvasLayer/FalseCorrectPopup
 
 func _ready():
 	bg.texture = load("res://" + question.background)
@@ -25,11 +24,10 @@ func _init_answer_buttons(answers: Array) -> void:
 
 func _check_correctness(is_correct: bool) -> void:
 	if is_correct:
-		popup_label.text = "Верно"
 		Global.correct_answers += 1
+		popup.show_correct()
 	else:
-		popup_label.text = "Неверно"
-	popup.visible = true
+		popup.show_wrong()
 
 func _on_next_question_button_pressed():
 	Global.load_next_screen()
