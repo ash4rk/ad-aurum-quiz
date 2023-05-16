@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://d0uhms64nhbdq" path="res://scenes/false_correct_popup.tscn" id="3_neh3p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6r2q"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
 bg_color = Color(0.662745, 0.8, 0.890196, 0.521569)
 corner_radius_top_left = 32
 corner_radius_top_right = 32
