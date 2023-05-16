@@ -53,7 +53,7 @@ size_flags_vertical = 4
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer2"]
 layout_mode = 2
 
-[node name="AnswerButtonsContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer2/VBoxContainer"]
+[node name="AnswerCheckBoxesContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer2/VBoxContainer"]
 layout_mode = 2
 
 [node name="AnswerButton" type="Button" parent="CanvasLayer/PanelContainer2/VBoxContainer"]

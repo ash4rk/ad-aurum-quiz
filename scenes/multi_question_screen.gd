@@ -6,7 +6,7 @@ var question: Dictionary
 
 @onready var question_label = $CanvasLayer/PanelContainer/QuestionLabel
 @onready var bg = $CanvasLayer/BG
-@onready var answer_checkboxes_container = $CanvasLayer/PanelContainer2/VBoxContainer/AnswerButtonsContainer
+@onready var answer_checkboxes_container = $CanvasLayer/PanelContainer2/VBoxContainer/AnswerCheckBoxesContainer
 @onready var popup: FalseCorrectPopup = $CanvasLayer/FalseCorrectPopup
 @onready var next_button = $CanvasLayer/FalseCorrectPopup/PanelContainer/VBoxContainer/NextQuestionButton
 
@@ -20,14 +20,14 @@ func _process(delta):
 
 func _init_answer_checkboxes(answers: Array) -> void:
 	for answer in answers:
-		var button: AnswerButton = ANSWER_CHECKBOX_SCENE.instantiate()
-		button.answer_text = answer.text
-		button.is_correct = answer.correct
-		answer_checkboxes_container.add_child(button)
+		var check: AnswerButton = ANSWER_CHECKBOX_SCENE.instantiate()
+		check.answer_text = answer.text
+		check.is_correct = answer.correct
+		answer_checkboxes_container.add_child(check)
 
 func _check_correctness() -> void:
-	for answer in answer_checkboxes_container.get_children():
-		if (not answer.is_correct and answer.button_pressed) or (answer.is_correct and not answer.button_pressed):
+	for check in answer_checkboxes_container.get_children():
+		if (not check.is_correct and check.button_pressed) or (check.is_correct and not check.button_pressed):
 			popup.show_wrong()
 			return
 	Global.correct_answers += 1
