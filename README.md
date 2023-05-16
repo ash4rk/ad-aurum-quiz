@@ -50,4 +50,5 @@ All this time recording a screencast. Still found design flaws and minor bugs fo
 
 ## Addons
 
-Used the [Godot Scene Manager](https://github.com/glass-brick/Scene-Manager) addon for cool fancy transitions between screenshots
+Used the [Godot Scene Manager](https://github.com/glass-brick/Scene-Manager) addon for cool fancy transitions between game screens.
+
