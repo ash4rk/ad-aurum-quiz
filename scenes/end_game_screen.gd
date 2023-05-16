@@ -18,7 +18,7 @@ func _on_new_game_button_pressed():
 	if not SceneManager.is_transitioning:
 		SceneManager.change_scene(
 			MAIN_MENU_SCREEN_PATH, {
-				"pattern_enter": "fade",
-				"pattern_leave": "squares",
+				"pattern_enter": "radial",
+				"pattern_leave": "scribbles",
 			}
 		)

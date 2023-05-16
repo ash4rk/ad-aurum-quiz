@@ -72,7 +72,7 @@ func _load_eng_game_screen():
 		SceneManager.change_scene(
 			END_GAME_SCREEN_PATH, {
 				"pattern_enter": "fade",
-				"pattern_leave": "squares",
+				"pattern_leave": "curtains",
 				"on_tree_enter": func(scene): _pass_end_game_params(scene)
 			}
 		)
