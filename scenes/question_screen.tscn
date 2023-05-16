@@ -1,8 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3r1gypxbkoxr"]
+[gd_scene load_steps=6 format=3 uid="uid://b3r1gypxbkoxr"]
 
 [ext_resource type="Script" path="res://scenes/question_screen.gd" id="1_5g8i4"]
 [ext_resource type="Texture2D" uid="uid://b045kf2rp4vw7" path="res://backgrounds/russia.jpg" id="2_eemx3"]
+[ext_resource type="Theme" uid="uid://6ceu4e4sceig" path="res://assets/main_theme.tres" id="3_4haj2"]
 [ext_resource type="PackedScene" uid="uid://d0uhms64nhbdq" path="res://scenes/false_correct_popup.tscn" id="3_w1ch1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mygqf"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.662745, 0.8, 0.890196, 0.521569)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
 
 [node name="QuestionScreen" type="Node"]
 script = ExtResource("1_5g8i4")
@@ -17,23 +33,20 @@ offset_bottom = 1286.0
 texture = ExtResource("2_eemx3")
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -83.0
-offset_top = 36.0
-offset_right = 83.0
-offset_bottom = 76.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -1.0
+offset_bottom = 151.0
 grow_horizontal = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("3_4haj2")
 
 [node name="QuestionLabel" type="Label" parent="CanvasLayer/PanelContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
 text = "Question text here..."
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer"]
 anchors_preset = 8
@@ -42,15 +55,19 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -40.0
-offset_top = 156.0
+offset_top = 361.0
 offset_right = 40.0
-offset_bottom = 257.0
+offset_bottom = 462.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("3_4haj2")
+theme_override_styles/panel = SubResource("StyleBoxFlat_mygqf")
 
 [node name="AnswerButtonsContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer2"]
 layout_mode = 2
+theme = ExtResource("3_4haj2")
+theme_override_constants/separation = 22
 
 [node name="FalseCorrectPopup" parent="CanvasLayer" instance=ExtResource("3_w1ch1")]

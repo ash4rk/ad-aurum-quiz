@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0uhms64nhbdq"]
+[gd_scene load_steps=4 format=3 uid="uid://d0uhms64nhbdq"]
 
 [ext_resource type="Script" path="res://scenes/false_correct_popup.gd" id="1_0khx7"]
+[ext_resource type="Theme" uid="uid://6ceu4e4sceig" path="res://assets/main_theme.tres" id="1_7afbk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u84ql"]
+bg_color = Color(0.447059, 0.447059, 0.447059, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 32.0
+expand_margin_top = 32.0
+expand_margin_right = 32.0
+expand_margin_bottom = 32.0
 
 [node name="FalseCorrectPopup" type="Control"]
 visible = false
@@ -10,7 +22,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_7afbk")
 script = ExtResource("1_0khx7")
+correct_modulate = Color(0.239216, 0.976471, 0.819608, 1)
+false_modulate = Color(0.882353, 0.576471, 0.611765, 1)
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -19,15 +34,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -146.0
+offset_top = -54.0
+offset_right = 147.0
+offset_bottom = 55.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_u84ql")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
+theme_override_constants/separation = 23
 
 [node name="FalseCorrectLabel" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -36,6 +53,7 @@ horizontal_alignment = 1
 
 [node name="NextQuestionButton" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_7afbk")
 text = "Далее"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/NextQuestionButton" to="." method="_on_next_question_button_pressed"]
