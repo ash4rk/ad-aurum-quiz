@@ -31,7 +31,7 @@ theme = ExtResource("2_1wiv4")
 
 [node name="CorrectAnswersLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Correct answers"
+text = "Правильных ответов:"
 
 [node name="CorrectAnswersValueLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
