@@ -45,7 +45,7 @@ In total, I spent about six hours on this project. Three hours were spent on the
 All this time recording a screencast. Still found design flaws and minor bugs for a while.
 
 <h1 align="center">
-<img src="https://github.com/ash4rk/ad-aurum-quiz/assets/30512240/5fc1a526-7f97-48a6-adb6-1690ab2544f9" height="500"/></h1>
+<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/30512240/239732333-a9103be0-cbdd-4e79-9873-f303171d8045.png" height="500"/></h1>
 <p align="center">
 
 ## Addons
