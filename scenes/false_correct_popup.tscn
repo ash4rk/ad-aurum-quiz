@@ -54,6 +54,6 @@ horizontal_alignment = 1
 [node name="NextQuestionButton" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_7afbk")
-text = "Далее"
+text = "KEY_NEXT"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/NextQuestionButton" to="." method="_on_next_question_button_pressed"]

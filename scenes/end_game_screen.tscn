@@ -31,7 +31,7 @@ theme = ExtResource("2_1wiv4")
 
 [node name="CorrectAnswersLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Правильных ответов:"
+text = "KEY_CORRECT_ANSWERS"
 
 [node name="CorrectAnswersValueLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -58,6 +58,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_1wiv4")
 theme_override_fonts/font = ExtResource("4_mwaeu")
-text = "Новая игра"
+text = "KEY_NEW_GAME"
 
 [connection signal="pressed" from="NewGameButton" to="." method="_on_new_game_button_pressed"]

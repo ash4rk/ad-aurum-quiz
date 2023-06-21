@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsp5t8m560nsr"]
+[gd_scene load_steps=5 format=3 uid="uid://bsp5t8m560nsr"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_862q7"]
 [ext_resource type="Theme" uid="uid://6ceu4e4sceig" path="res://assets/main_theme.tres" id="2_l54my"]
 [ext_resource type="FontFile" uid="uid://b0d7wbfx8ntg5" path="res://assets/fonts/OpenSans-Bold.ttf" id="4_2xerh"]
+[ext_resource type="PackedScene" uid="uid://cpq6hv8wixsvb" path="res://scenes/locale_switch.tscn" id="4_3kgab"]
 
 [node name="MainMenuScreen" type="Node"]
 script = ExtResource("1_862q7")
@@ -31,7 +32,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_l54my")
 theme_override_font_sizes/font_size = 78
-text = "Начать игру"
+text = "KEY_PLAY"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 5
@@ -43,11 +44,12 @@ offset_right = 164.5
 offset_bottom = 97.0
 grow_horizontal = 2
 theme = ExtResource("2_l54my")
+theme_override_constants/separation = 25
 
 [node name="AnswersNumberOptionLabel" type="Label" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_l54my")
-text = "Количество ответов для вывода:  "
+text = "KEY_NUMBER_OF_ANSWERS"
 
 [node name="AnswersNumberOption" type="OptionButton" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
@@ -63,6 +65,20 @@ popup/item_2/text = "4"
 popup/item_2/id = 2
 popup/item_3/text = "5"
 popup/item_3/id = 3
+
+[node name="LocaleSwitch" parent="CanvasLayer" instance=ExtResource("4_3kgab")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -97.0
+offset_top = -317.0
+offset_right = 533.0
+offset_bottom = 203.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.3, 0.3)
 
 [connection signal="pressed" from="CanvasLayer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="item_selected" from="CanvasLayer/HBoxContainer/AnswersNumberOption" to="." method="_on_answers_number_option_item_selected"]

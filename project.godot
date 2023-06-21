@@ -28,3 +28,8 @@ window/size/viewport_height=1280
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/scene_manager/plugin.cfg")
+
+[internationalization]
+
+locale/translation_remaps={}
+locale/translations=PackedStringArray("res://assets/locales/Locales.en.translation", "res://assets/locales/Locales.ru.translation")

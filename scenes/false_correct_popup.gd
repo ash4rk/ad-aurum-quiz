@@ -8,12 +8,12 @@ class_name FalseCorrectPopup
 
 func show_correct():
 	self.visible = true
-	false_correct_label.text = "Верно"
+	false_correct_label.text = "KEY_CORRECT"
 	self.modulate = correct_modulate
 
 func show_wrong():
 	self.visible = true
-	false_correct_label.text = "Неверно"
+	false_correct_label.text = "KEY_WRONG"
 	self.modulate = false_modulate
 
 func _on_next_question_button_pressed():
