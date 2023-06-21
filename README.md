@@ -11,6 +11,7 @@ Incorrect choices are highlighted in red. After completing all the questions, pl
 * Basic statistics of answers
 * Сustomizable maximum number of answers displayed
 * Support for multiple correct answers with checkbox interface
+* Supports English and Russian localization
 
 ## Preview
 
