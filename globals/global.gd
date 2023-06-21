@@ -3,7 +3,10 @@ extends Node
 const QUESTION_SCREEN_PATH = "res://scenes/question_screen.tscn"
 const MULTI_QUESTION_SCREEN_PATH = "res://scenes/multi_question_screen.tscn"
 const END_GAME_SCREEN_PATH = "res://scenes/end_game_screen.tscn"
-const QUESTIONS_JSON_PATH = "res://questions.json"
+var QUESTIONS_JSON_PATHS = {
+	"ru": "res://questions_ru.json", 
+	"en": "res://questions_en.json"
+	}
 
 var _questions: Array
 var _question_idx: int = -1
@@ -11,6 +14,9 @@ var correct_answers: = 0
 var answers_number_display: int = 4
 
 func _ready():
+	load_questions()
+	
+func load_questions():
 	_questions = _parse_questions()
 	_questions.shuffle()
 
@@ -51,7 +57,14 @@ func _filter_by_answers_number(question: Dictionary) -> Dictionary:
 	return result_question
 
 func _parse_questions() -> Array:
-	var json_string = FileAccess.get_file_as_string(QUESTIONS_JSON_PATH)
+	# TODO: Change this when 3 character local codes are supported
+	var locale_code = TranslationServer.get_locale().left(2)
+	var json_string
+	match locale_code:
+		"ru":
+			json_string = FileAccess.get_file_as_string(QUESTIONS_JSON_PATHS.ru)
+		"en":
+			json_string = FileAccess.get_file_as_string(QUESTIONS_JSON_PATHS.en)
 	return JSON.parse_string(json_string)
 
 func _get_first_correct_idx(answers: Array) -> int:

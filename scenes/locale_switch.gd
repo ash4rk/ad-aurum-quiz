@@ -1,28 +1,21 @@
 extends Control
 
-const RU_FLAG_PIC = preload("res://assets/locales/ru_flag.png")
-const UK_FLAG_PIC = preload("res://assets/locales/uk_flag.png")
+var localizationIndex = 0
+var localizations = ["en", "ru"]
+var flags = {
+	"en": preload("res://assets/locales/uk_flag.png"),
+	"ru": preload("res://assets/locales/ru_flag.png"),
+}
 
 func _ready():
-	TranslationServer.set_locale(TranslationServer.get_locale())
-	_update_flag_picture(TranslationServer.get_locale())
+	TranslationServer.set_locale("en")
 
 func _on_pressed():
-	var new_locale: String
-	if TranslationServer.get_locale().contains('en'):
-		new_locale = "ru"
-	else:
-		new_locale = "en"
-		
-	TranslationServer.set_locale(new_locale)
-	_update_flag_picture(new_locale)
+	localizationIndex = (localizationIndex + 1) % localizations.size()
 
-func _update_flag_picture(locale: String):
-	match locale:
-		"ru":
-			self.texture_normal = RU_FLAG_PIC
-		"en":
-			self.texture_normal = UK_FLAG_PIC
+	self.texture_normal = flags[localizations[localizationIndex]]
+	TranslationServer.set_locale(localizations[localizationIndex])
+	Global.load_questions()
 
 func _on_mouse_entered():
 	self.modulate = Color(1.0, 1.0, 1.0, 0.7)
