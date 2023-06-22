@@ -59,7 +59,7 @@
 	  {"text": "Warcraft", "correct": true},
 	  {"text": "Portal", "correct": false},
 	  {"text": "Minecraft", "correct": false},
-	  {"text": "The Elder Scrolls IV: Oblivion", "correct": false}
+	  {"text": "Super Mario", "correct": false}
 	],
 	"background": "backgrounds/warcraft.jpg"
   },
